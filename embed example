@@ -1,0 +1,24 @@
+        .setColor('#RANDOM')
+        .setTitle('Kayc bot help')
+        .setURL('https://discord.gg/JZT6MZN')
+        .setAuthor('Kayc bot', 'https://imgur.com/Qvxxk6J', 'https://discord.js.org')
+        .setDescription('<comandos>')
+        .setThumbnail('https://imgur.com/Qvxxk6J')
+        .addFields(
+            { name: '\u200B', value: '\u200B' },
+            { name: 'k!mds', inline: true },
+            { name: 'k!queisso', inline: true },
+            { name: 'k!triste', inline: true },
+            { name: 'k!indignado', inline: true },
+            { name: 'k!filho', inline: true },
+            { name: 'k!mano', inline: true },
+            { name: 'k!con5', inline: true },
+            { name: 'k!diguin', inline: true },
+            { name: 'k!opa', inline: true },
+            { name: 'k!meudeus', inline: true },
+            { name: 'k!moco', inline: true },
+            { name: 'k!beleza', inline: true },
+        )
+        .setImage('https://imgur.com/Qvxxk6J')
+        .setTimestamp()
+        .setFooter('Solicitado por', message.author.tag , 'https://imgur.com/Qvxxk6J');
