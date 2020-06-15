@@ -115,6 +115,76 @@ client.on("message", async message => {
             const con5 = message.channel.send("Perai que o rapaz da consinco tá me ligando aqui, ferrou")
 
             break
+        case 'nhai':
+             if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                    if (connection) {
+                        const dispatcher = connection.play(fs.createReadStream('./src/audio/nhai.mp3'));
+                        dispatcher.on('start', () => {
+                            console.log('audio.mp3 is now playing!');
+                        });
+    
+                        dispatcher.on('finish', () => {
+                            console.log('audio.mp3 has finished playing!');
+                            message.member.voice.channel.leave();
+                        });
+    
+                        dispatcher.on('error', () => {
+                            console.error
+                            message.member.voice.channel.leave();
+                        });
+                    }
+                } else {
+                    message.reply('Você precisa entrar em um canal de voz antes.')
+                }
+                break    
+
+        case 'miau':
+              if (message.member.voice.channel) {
+                 const connection = await message.member.voice.channel.join();
+                    if (connection) {
+                        const dispatcher = connection.play(fs.createReadStream('./src/audio/miau.mp3'));
+                        dispatcher.on('start', () => {
+                            console.log('audio.mp3 is now playing!');
+                        });
+    
+                        dispatcher.on('finish', () => {
+                            console.log('audio.mp3 has finished playing!');
+                            message.member.voice.channel.leave();
+                        });
+    
+                        dispatcher.on('error', () => {
+                            console.error
+                            message.member.voice.channel.leave();
+                        });
+                    }
+                } else {
+                    message.reply('Você precisa entrar em um canal de voz antes.')
+                }
+                break    
+        case 'bn':
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/boa-noite.mp3'));
+                        dispatcher.on('start', () => {
+                            console.log('audio.mp3 is now playing!');
+                        });
+    
+                        dispatcher.on('finish', () => {
+                            console.log('audio.mp3 has finished playing!');
+                            message.member.voice.channel.leave();
+                        });
+    
+                        dispatcher.on('error', () => {
+                            console.error
+                            message.member.voice.channel.leave();
+                        });
+                    }
+                } else {
+                    message.reply('Você precisa entrar em um canal de voz antes.')
+                }
+                break            
         case 'brabo':
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
