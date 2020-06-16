@@ -9,40 +9,40 @@ client.on("ready", () => {
     console.log("[Kayc bot is running]")
 })
 // client.on('raw', console.log);
-client.on('message', () => {
-    function interaction() {
-        //704330987705729134 - id do canal de home officie
-        //720079259976073276 - id do canal de teste
-        const msgLoka = client.channels.cache.get('704330987705729134');
-        messageRandom = Math.floor(Math.random() * (800 - 1) + 1);
-        console.log(messageRandom)
-        if (messageRandom == 10 || 20 || 30 || 40 || 50) {
+// client.on('message', () => {
+//     function interaction() {
+//         //704330987705729134 - id do canal de home officie
+//         //720079259976073276 - id do canal de teste
+//         const msgLoka = client.channels.cache.get('704330987705729134');
+//         messageRandom = Math.floor(Math.random() * (800 - 1) + 1);
+//         console.log(messageRandom)
+//         if (messageRandom == 10 || 20 || 30 || 40 || 50) {
 
-            randomNumber = Math.floor(Math.random() * (8 - 1) + 1);
+//             randomNumber = Math.floor(Math.random() * (8 - 1) + 1);
 
-            if (randomNumber == 1) {
-                msgLoka.send("Guiguin")
-            } if (randomNumber == 2) {
-                msgLoka.send("Diguin")
-            } if (randomNumber == 3) {
-                msgLoka.send("To com saudades das minhas vaquinhas")
-            } if (randomNumber == 4) {
-                msgLoka.send("Alô, aqui é o Kayc da TI. Vim atualizar o seu PDV")
-            } if (randomNumber == 5) {
-                msgLoka.send("AOOOOOOOOOOO")
-            } if (randomNumber == 6) {
-                msgLoka.send("MUUUUUÉÉ")
-            } if (randomNumber == 7) {
-                msgLoka.send("Acho que vou jogar um CS..")
-            } if (randomNumber == 8) {
-                msgLoka.send("Aaaaaaaah!")
-            }
+//             if (randomNumber == 1) {
+//                 msgLoka.send("Guiguin")
+//             } if (randomNumber == 2) {
+//                 msgLoka.send("Diguin")
+//             } if (randomNumber == 3) {
+//                 msgLoka.send("To com saudades das minhas vaquinhas")
+//             } if (randomNumber == 4) {
+//                 msgLoka.send("Alô, aqui é o Kayc da TI. Vim atualizar o seu PDV")
+//             } if (randomNumber == 5) {
+//                 msgLoka.send("AOOOOOOOOOOO")
+//             } if (randomNumber == 6) {
+//                 msgLoka.send("MUUUUUÉÉ")
+//             } if (randomNumber == 7) {
+//                 msgLoka.send("Acho que vou jogar um CS..")
+//             } if (randomNumber == 8) {
+//                 msgLoka.send("Aaaaaaaah!")
+//             }
 
 
-        }
-    }
-    setInterval(interaction,5 * 60 * 1000)
-})
+//         }
+//     }
+//     setInterval(interaction,5 * 60 * 1000)
+// })
 
 
 
@@ -89,6 +89,11 @@ client.on("message", async message => {
             .addField('_____________________', 'voice commands')
             .addFields(
             {name: '\u200B', value: '\u200B' },
+            {name:'voice command ' , value: 'k!urro', inline: true },
+            {name:'voice command ' , value: 'k!brabo', inline: true },
+            {name:'voice command ' , value: 'k!bn', inline: true },
+            {name:'voice command ' , value: 'k!miau', inline: true },
+            {name:'voice command ' , value: 'k!nhai', inline: true },
             {name:'voice command ' , value: 'k!diguin', inline: true },
             {name:'voice command ' , value: 'k!opa', inline: true },
             {name:'voice command ' , value: 'k!meudeus', inline: true },
@@ -104,20 +109,20 @@ client.on("message", async message => {
 
     switch (comando) {
         case 'lucas':
-            var gifLuks
+
                 randomNumber = Math.floor(Math.random() * (5 - 1) + 1);
                 console.log(randomNumber)
                 if (randomNumber == 1) {
-                    gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas2.gif')
+                 var   gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas1.gif')
                     message.reply(gifLuks)
                 } if (randomNumber == 2) {
-                    gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas3.gif')
+                  var  gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas2.gif')
                     message.reply(gifLuks)
                 } if (randomNumber == 3) {
-                    gifLuks  = new discord.MessageAttachment('./src/gif/luks/lukinhas2.gif')
+                  var  gifLuks  = new discord.MessageAttachment('./src/gif/luks/lukinhas3.gif')
                     message.reply(gifLuks)
                 } if (randomNumber == 4) {
-                    gifLuks  =  new discord.MessageAttachment('./src/gif/luks/lukinhas4.gif')
+                  var  gifLuks  =  new discord.MessageAttachment('./src/gif/luks/lukinhas4.gif')
                     message.reply(gifLuks)
                 }
            break
