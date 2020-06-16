@@ -8,53 +8,16 @@ const fs = require('fs');
 client.on("ready", () => {
     console.log("[Kayc bot is running]")
 })
-// client.on('raw', console.log);
-// client.on('message', () => {
-//     function interaction() {
-//         //704330987705729134 - id do canal de home officie
-//         //720079259976073276 - id do canal de teste
-//         const msgLoka = client.channels.cache.get('704330987705729134');
-//         messageRandom = Math.floor(Math.random() * (800 - 1) + 1);
-//         console.log(messageRandom)
-//         if (messageRandom == 10 || 20 || 30 || 40 || 50) {
-
-//             randomNumber = Math.floor(Math.random() * (8 - 1) + 1);
-
-//             if (randomNumber == 1) {
-//                 msgLoka.send("Guiguin")
-//             } if (randomNumber == 2) {
-//                 msgLoka.send("Diguin")
-//             } if (randomNumber == 3) {
-//                 msgLoka.send("To com saudades das minhas vaquinhas")
-//             } if (randomNumber == 4) {
-//                 msgLoka.send("Alô, aqui é o Kayc da TI. Vim atualizar o seu PDV")
-//             } if (randomNumber == 5) {
-//                 msgLoka.send("AOOOOOOOOOOO")
-//             } if (randomNumber == 6) {
-//                 msgLoka.send("MUUUUUÉÉ")
-//             } if (randomNumber == 7) {
-//                 msgLoka.send("Acho que vou jogar um CS..")
-//             } if (randomNumber == 8) {
-//                 msgLoka.send("Aaaaaaaah!")
-//             }
-
-
-//         }
-//     }
-//     setInterval(interaction,5 * 60 * 1000)
-// })
-
-
-
-
 
 client.on("message", async message => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
     if (!message.content.startsWith(config.prefix)) return;
 
-    let args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const comando = args.shift().toLowerCase();
+    if(message.content == 'k!delete'){
+        message.channel.send('teste')
+        message.delete([1])
+    }
 
     if (message.content === 'k!perfil') {
         // Send the user's avatar URL
@@ -103,9 +66,23 @@ client.on("message", async message => {
         .setImage('https://imgur.com/GLmRC33')
         .setTimestamp()
         .setFooter('Solicitado', 'https://imgur.com/GLmRC33');
-        message.channel.send(embed);
+        message.author.send(embed);
+        message.delete([1]);
     }
 
+
+
+})
+
+//--------------------bagunça-----------------------------
+
+client.on("message", async message => {
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+    if (!message.content.startsWith(config.prefix)) return;
+
+    let args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const comando = args.shift().toLowerCase();
 
     switch (comando) {
         case 'lucas':
@@ -125,6 +102,7 @@ client.on("message", async message => {
                   var  gifLuks  =  new discord.MessageAttachment('./src/gif/luks/lukinhas4.gif')
                     message.reply(gifLuks)
                 }
+                message.delete([1]);
            break
         case 'gui':
              var guiImg
@@ -138,42 +116,50 @@ client.on("message", async message => {
                     return(guiImg)
                 }
 
-           
+                message.delete([1]);
             break
         case'dificil':
             const dificil = message.reply("voce é um menino(a) muito dificil")
+            message.delete([1]);
             break
         case 'mds':
             const mds = message.channel.send("Meu Deeeeeus!!!");
+            message.delete([1]);
             break
 
         case 'queisso':
-            const queisso = message.channel.send("Que isso cara!?")
+            const queisso = message.channel.send("Que isso cara!?");
+            message.delete([1]);
 
             break
 
         case 'triste':
-            const triste = message.channel.send("Fico triste com um negócio desse...")
+            const triste = message.channel.send("Fico triste com um negócio desse...");
+            message.delete([1]);
 
             break
 
         case 'indignado':
-            const indignado = message.channel.send("Fico indignado com um negócio desse...")
+            const indignado = message.channel.send("Fico indignado com um negócio desse...");
+            message.delete([1]);
 
             break
 
         case 'filho':
-            const filho = message.reply("Perai que o menino tá batendo a cabeça ali!")
+            const filho = message.reply("Perai que o menino tá batendo a cabeça ali!");
+            message.delete([1]);
 
             break
 
         case 'mano':
-            const mano = message.channel.send("Ah mano sei la!")
+            const mano = message.channel.send("Ah mano sei la!");
+            message.delete([1]);
 
             break
 
         case 'con5':
-            const con5 = message.channel.send("Perai que o rapaz da consinco tá me ligando aqui, ferrou")
+            const con5 = message.channel.send("Perai que o rapaz da consinco tá me ligando aqui, ferrou");
+            message.delete([1]);
 
             break
          case 'manel':
@@ -181,6 +167,7 @@ client.on("message", async message => {
                const connection = await message.member.voice.channel.join();
                        if (connection) {
                            const dispatcher = connection.play(fs.createReadStream('./src/audio/manel-calango.mp3'));
+                           message.delete([1]);
                            dispatcher.on('start', () => {
                                console.log('audio.mp3 is now playing!');
                            });
@@ -205,6 +192,7 @@ client.on("message", async message => {
                 const connection = await message.member.voice.channel.join();
                     if (connection) {
                         const dispatcher = connection.play(fs.createReadStream('./src/audio/nhai.mp3'));
+                        message.delete([1]);
                         dispatcher.on('start', () => {
                             console.log('audio.mp3 is now playing!');
                         });
@@ -229,6 +217,7 @@ client.on("message", async message => {
                  const connection = await message.member.voice.channel.join();
                     if (connection) {
                         const dispatcher = connection.play(fs.createReadStream('./src/audio/miau.mp3'));
+                        message.delete([1]);
                         dispatcher.on('start', () => {
                             console.log('audio.mp3 is now playing!');
                         });
@@ -252,6 +241,7 @@ client.on("message", async message => {
                 const connection = await message.member.voice.channel.join();
                 if (connection) {
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/boa-noite.mp3'));
+                    message.delete([1]);
                         dispatcher.on('start', () => {
                             console.log('audio.mp3 is now playing!');
                         });
@@ -275,6 +265,7 @@ client.on("message", async message => {
                 const connection = await message.member.voice.channel.join();
                 if (connection) {
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/brabo.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -298,6 +289,7 @@ client.on("message", async message => {
                 const connection = await message.member.voice.channel.join();
                 if (connection) {
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/urro.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -323,6 +315,7 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/diguin.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/diguin.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -349,6 +342,7 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/moco.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/moco.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -374,6 +368,7 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/moco.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/beleza.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -399,6 +394,7 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/moco.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/mds.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
@@ -424,6 +420,7 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/moco.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/oopa.mp3'));
+                    message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
                     });
