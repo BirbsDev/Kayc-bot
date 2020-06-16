@@ -176,6 +176,30 @@ client.on("message", async message => {
             const con5 = message.channel.send("Perai que o rapaz da consinco tá me ligando aqui, ferrou")
 
             break
+         case 'manel':
+            if (message.member.voice.channel) {
+               const connection = await message.member.voice.channel.join();
+                       if (connection) {
+                           const dispatcher = connection.play(fs.createReadStream('./src/audio/manel-calango.mp3'));
+                           dispatcher.on('start', () => {
+                               console.log('audio.mp3 is now playing!');
+                           });
+       
+                           dispatcher.on('finish', () => {
+                               console.log('audio.mp3 has finished playing!');
+                               message.member.voice.channel.leave();
+                           });
+       
+                           dispatcher.on('error', () => {
+                               console.error
+                               message.member.voice.channel.leave();
+                           });
+                       }
+                   } else {
+                       message.reply('Você precisa entrar em um canal de voz antes.')
+                   }
+                   break
+
         case 'nhai':
              if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
