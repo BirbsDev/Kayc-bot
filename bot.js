@@ -14,7 +14,7 @@ client.on("message", async message => {
     if (message.channel.type === "dm") return;
     if (!message.content.startsWith(config.prefix)) return;
 
-    if(message.content == 'k!delete'){
+    if (message.content == 'k!delete') {
         message.channel.send('teste')
         message.delete([1])
     }
@@ -26,46 +26,46 @@ client.on("message", async message => {
 
     if (message.content === 'k!help') {
         const embed = new MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('Kayc bot help')
-        .setURL('https://discord.gg/JZT6MZN')
-        .setAuthor('Kayc bot', 'https://imgur.com/GLmRC33', 'https://discord.js.org')
-        .setDescription('<comandos>')
-        .setThumbnail('https://imgur.com/GLmRC33')
-        .addField('\u200B', '\u200B')
-        .addField('_____________________','chat commands')
-        .addFields(
-            {name: '\u200B', value: '\u200B' },
-            {name:'chat command ' , value: 'k!mds', inline: true },
-            {name:'chat command ' , value: 'k!queisso', inline: true },
-            {name:'chat command ' , value: 'k!triste', inline: true },
-            {name:'chat command ' , value: 'k!indignado', inline: true },
-            {name:'chat command ' , value: 'k!filho', inline: true },
-            {name:'chat command ' , value: 'k!mano', inline: true },
-            {name:'chat command ' , value: 'k!con5', inline: true },
-            {name:'chat command ' , value: 'k!dificil', inline: true },
-            {name: 'chat command' , value:'k!gui', inline: true},
-            {name: '\u200B', value: '\u200B' }
+            .setColor('RANDOM')
+            .setTitle('Kayc bot help')
+            .setURL('https://discord.gg/JZT6MZN')
+            .setAuthor('Kayc bot', 'https://imgur.com/GLmRC33', 'https://discord.js.org')
+            .setDescription('<comandos>')
+            .setThumbnail('https://imgur.com/GLmRC33')
+            .addField('\u200B', '\u200B')
+            .addField('_____________________', 'chat commands')
+            .addFields(
+                { name: '\u200B', value: '\u200B' },
+                { name: 'chat command ', value: 'k!mds', inline: true },
+                { name: 'chat command ', value: 'k!queisso', inline: true },
+                { name: 'chat command ', value: 'k!triste', inline: true },
+                { name: 'chat command ', value: 'k!indignado', inline: true },
+                { name: 'chat command ', value: 'k!filho', inline: true },
+                { name: 'chat command ', value: 'k!mano', inline: true },
+                { name: 'chat command ', value: 'k!con5', inline: true },
+                { name: 'chat command ', value: 'k!dificil', inline: true },
+                { name: 'chat command', value: 'k!gui', inline: true },
+                { name: '\u200B', value: '\u200B' }
             )
-            
+
 
             .addField('_____________________', 'voice commands')
             .addFields(
-            {name: '\u200B', value: '\u200B' },
-            {name:'voice command ' , value: 'k!urro', inline: true },
-            {name:'voice command ' , value: 'k!brabo', inline: true },
-            {name:'voice command ' , value: 'k!bn', inline: true },
-            {name:'voice command ' , value: 'k!miau', inline: true },
-            {name:'voice command ' , value: 'k!nhai', inline: true },
-            {name:'voice command ' , value: 'k!diguin', inline: true },
-            {name:'voice command ' , value: 'k!opa', inline: true },
-            {name:'voice command ' , value: 'k!meudeus', inline: true },
-            {name:'voice command ' , value: 'k!moco', inline: true },
-            {name:'voice command ' , value: 'k!beleza', inline: true },
-        )
-        .setImage('https://imgur.com/GLmRC33')
-        .setTimestamp()
-        .setFooter('Solicitado', 'https://imgur.com/GLmRC33');
+                { name: '\u200B', value: '\u200B' },
+                { name: 'voice command ', value: 'k!urro', inline: true },
+                { name: 'voice command ', value: 'k!brabo', inline: true },
+                { name: 'voice command ', value: 'k!bn', inline: true },
+                { name: 'voice command ', value: 'k!miau', inline: true },
+                { name: 'voice command ', value: 'k!nhai', inline: true },
+                { name: 'voice command ', value: 'k!diguin', inline: true },
+                { name: 'voice command ', value: 'k!opa', inline: true },
+                { name: 'voice command ', value: 'k!meudeus', inline: true },
+                { name: 'voice command ', value: 'k!moco', inline: true },
+                { name: 'voice command ', value: 'k!beleza', inline: true },
+            )
+            .setImage('https://imgur.com/GLmRC33')
+            .setTimestamp()
+            .setFooter('Solicitado', 'https://imgur.com/GLmRC33');
         message.author.send(embed);
         message.delete([1]);
     }
@@ -87,38 +87,38 @@ client.on("message", async message => {
     switch (comando) {
         case 'lucas':
 
-                randomNumber = Math.floor(Math.random() * (5 - 1) + 1);
-                console.log(randomNumber)
-                if (randomNumber == 1) {
-                 var   gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas1.gif')
-                    message.reply(gifLuks)
-                } if (randomNumber == 2) {
-                  var  gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas2.gif')
-                    message.reply(gifLuks)
-                } if (randomNumber == 3) {
-                  var  gifLuks  = new discord.MessageAttachment('./src/gif/luks/lukinhas3.gif')
-                    message.reply(gifLuks)
-                } if (randomNumber == 4) {
-                  var  gifLuks  =  new discord.MessageAttachment('./src/gif/luks/lukinhas4.gif')
-                    message.reply(gifLuks)
-                }
-                message.delete([1]);
-           break
-        case 'gui':
-             var guiImg
-             var randomImage = Math.floor(Math.random() * 11);
-                console.log('Hit number: ' + randomImage)
-                if(randomImage % 2 == 0 ){
-                    guiImg = message.reply("tirei essa foto do Gui agora", {files:['./src/image/gui-boi.jpg']})
-                    return(guiImg)
-                }else{
-                    guiImg = message.reply("tirei essa foto do Gui agora", {files:['./src/image/gui-celeron.jpg']})
-                    return(guiImg)
-                }
-
-                message.delete([1]);
+            randomNumber = Math.floor(Math.random() * (5 - 1) + 1);
+            console.log(randomNumber)
+            if (randomNumber == 1) {
+                var gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas1.gif')
+                message.reply(gifLuks)
+            } if (randomNumber == 2) {
+                var gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas2.gif')
+                message.reply(gifLuks)
+            } if (randomNumber == 3) {
+                var gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas3.gif')
+                message.reply(gifLuks)
+            } if (randomNumber == 4) {
+                var gifLuks = new discord.MessageAttachment('./src/gif/luks/lukinhas4.gif')
+                message.reply(gifLuks)
+            }
+            message.delete([1]);
             break
-        case'dificil':
+        case 'gui':
+            var guiImg
+            var randomImage = Math.floor(Math.random() * 11);
+            console.log('Hit number: ' + randomImage)
+            if (randomImage % 2 == 0) {
+                guiImg = message.reply("tirei essa foto do Gui agora", { files: ['./src/image/gui-boi.jpg'] })
+                return (guiImg)
+            } else {
+                guiImg = message.reply("tirei essa foto do Gui agora", { files: ['./src/image/gui-celeron.jpg'] })
+                return (guiImg)
+            }
+
+            message.delete([1]);
+            break
+        case 'dificil':
             const dificil = message.reply("voce é um menino(a) muito dificil")
             message.delete([1]);
             break
@@ -162,104 +162,104 @@ client.on("message", async message => {
             message.delete([1]);
 
             break
-         case 'manel':
+        case 'manel':
             if (message.member.voice.channel) {
-               const connection = await message.member.voice.channel.join();
-                       if (connection) {
-                           const dispatcher = connection.play(fs.createReadStream('./src/audio/manel-calango.mp3'));
-                           message.delete([1]);
-                           dispatcher.on('start', () => {
-                               console.log('audio.mp3 is now playing!');
-                           });
-       
-                           dispatcher.on('finish', () => {
-                               console.log('audio.mp3 has finished playing!');
-                               message.member.voice.channel.leave();
-                           });
-       
-                           dispatcher.on('error', () => {
-                               console.error
-                               message.member.voice.channel.leave();
-                           });
-                       }
-                   } else {
-                       message.reply('Você precisa entrar em um canal de voz antes.')
-                   }
-                   break
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/manel-calango.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
+                }
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break
 
         case 'nhai':
-             if (message.member.voice.channel) {
+            if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
-                    if (connection) {
-                        const dispatcher = connection.play(fs.createReadStream('./src/audio/nhai.mp3'));
-                        message.delete([1]);
-                        dispatcher.on('start', () => {
-                            console.log('audio.mp3 is now playing!');
-                        });
-    
-                        dispatcher.on('finish', () => {
-                            console.log('audio.mp3 has finished playing!');
-                            message.member.voice.channel.leave();
-                        });
-    
-                        dispatcher.on('error', () => {
-                            console.error
-                            message.member.voice.channel.leave();
-                        });
-                    }
-                } else {
-                    message.reply('Você precisa entrar em um canal de voz antes.')
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/nhai.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
                 }
-                break    
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break
 
         case 'miau':
-              if (message.member.voice.channel) {
-                 const connection = await message.member.voice.channel.join();
-                    if (connection) {
-                        const dispatcher = connection.play(fs.createReadStream('./src/audio/miau.mp3'));
-                        message.delete([1]);
-                        dispatcher.on('start', () => {
-                            console.log('audio.mp3 is now playing!');
-                        });
-    
-                        dispatcher.on('finish', () => {
-                            console.log('audio.mp3 has finished playing!');
-                            message.member.voice.channel.leave();
-                        });
-    
-                        dispatcher.on('error', () => {
-                            console.error
-                            message.member.voice.channel.leave();
-                        });
-                    }
-                } else {
-                    message.reply('Você precisa entrar em um canal de voz antes.')
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/miau.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
                 }
-                break    
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break
         case 'bn':
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
                 if (connection) {
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/boa-noite.mp3'));
                     message.delete([1]);
-                        dispatcher.on('start', () => {
-                            console.log('audio.mp3 is now playing!');
-                        });
-    
-                        dispatcher.on('finish', () => {
-                            console.log('audio.mp3 has finished playing!');
-                            message.member.voice.channel.leave();
-                        });
-    
-                        dispatcher.on('error', () => {
-                            console.error
-                            message.member.voice.channel.leave();
-                        });
-                    }
-                } else {
-                    message.reply('Você precisa entrar em um canal de voz antes.')
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
                 }
-                break            
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break
         case 'brabo':
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
@@ -283,7 +283,7 @@ client.on("message", async message => {
             } else {
                 message.reply('Você precisa entrar em um canal de voz antes.')
             }
-            break    
+            break
         case 'urro':
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
@@ -307,7 +307,7 @@ client.on("message", async message => {
             } else {
                 message.reply('Você precisa entrar em um canal de voz antes.')
             }
-            break    
+            break
         case 'diguin':
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
@@ -420,6 +420,78 @@ client.on("message", async message => {
                     // YOUTUBE CODE - connection.play(ytdl('https://youtu.be/O4swU5kFwt0'));
                     // FILESYSTEM CODE - connection.play(fs.createReadStream('./src/audio/moco.mp3'));
                     const dispatcher = connection.play(fs.createReadStream('./src/audio/oopa.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
+                }
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break;
+        case 'diguin2':
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/diguin2.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
+                }
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break;
+        case 'fome':
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/fome.mp3'));
+                    message.delete([1]);
+                    dispatcher.on('start', () => {
+                        console.log('audio.mp3 is now playing!');
+                    });
+
+                    dispatcher.on('finish', () => {
+                        console.log('audio.mp3 has finished playing!');
+                        message.member.voice.channel.leave();
+                    });
+
+                    dispatcher.on('error', () => {
+                        console.error
+                        message.member.voice.channel.leave();
+                    });
+                }
+            } else {
+                message.reply('Você precisa entrar em um canal de voz antes.')
+            }
+            break;
+        case 'opa2':
+            if (message.member.voice.channel) {
+                const connection = await message.member.voice.channel.join();
+                if (connection) {
+                    const dispatcher = connection.play(fs.createReadStream('./src/audio/opa2.mp3'));
                     message.delete([1]);
                     dispatcher.on('start', () => {
                         console.log('audio.mp3 is now playing!');
