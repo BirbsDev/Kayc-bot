@@ -1,9 +1,7 @@
 const { Client, MessageEmbed } = require('discord.js');
 const { author } = require('../../config.json');
 const dir_img = 'https://i.imgur.com/GLmRC33.jpg';
-const chat_commands = require('../../../utils/chat-commands.json')
-const voice_commands = require('../../../utils/voice-commands.json')
-    // { "name": "\u200B", "value": "\u200B" },
+// { "name": "\u200B", "value": "\u200B" },
 module.exports = {
     name: 'help',
     description: 'help',
@@ -12,20 +10,14 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle('Kenny-bot - Ajuda')
             .setURL('https://discord.gg/JZT6MZN')
-            .setAuthor('Kenny-bot', dir_img, 'https://discord.js.org')
-            .setDescription('Listagem dos comandos')
+            // .setAuthor('Kenny-bot', dir_img, 'https://discord.js.org')
+            .setDescription('Lista de comandos')
             .setThumbnail(dir_img)
-            .addFields({ name: '\u200B', value: '\u200B' })
-            .addField('Comandos de chat', 'Comandos de chat')
-            .addFields(...chat_commands)
-
-        .addField('Comandos de voz', 'Comandos de voz')
-            .addFields(...voice_commands)
+            .addField('Comandos de text', 'Escreva "k.textlist" para a listagem dos comandos de texto')
+            .addField('Comandos de voz', 'Escreva "k.voicelist" para a listagem dos comandos de voz')
             .setTimestamp()
-            .setFooter('Solicitado', dir_img);
-        message.author.send(embed);
-        message.reply("Lista de comandos enviados por privado")
-            //message.author.reply("Lista de comandos enviados por privado")
+            .setFooter('Solicitado às', dir_img);
+        message.reply(embed)
         message.delete([1]);
     }
 }
