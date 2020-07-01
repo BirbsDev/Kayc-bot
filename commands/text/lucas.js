@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'gui',
-    description: 'gui',
+    name: 'lucas',
+    description: 'lucas',
     execute(message) {
         let randomNumber = Math.floor(Math.random() * (5 - 1) + 1);
         if (randomNumber == 1) {
