@@ -4,6 +4,5 @@ module.exports = {
     execute(message) {
         message.channel.send("Meu Deeeeeus!!!");
         message.delete([1]);
-        break
     },
 };
