@@ -1,5 +1,7 @@
 [
     { "name": "Faz urro ", "value": "k.urro", "inline": true },
+    { "name": "trava ", "value": "k.trava", "inline": true },
+    { "name": "delicia ", "value": "k.delicia", "inline": true },
     { "name": "Brabo ", "value": "k.brabo", "inline": true },
     { "name": "Boa noite (Lucas) ", "value": "k.bn", "inline": true },
     { "name": "Miau", "value": "k.miau", "inline": true },
