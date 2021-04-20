@@ -2,3 +2,4 @@ node_modules/
 package-lock.json
 Kayc-bot.zip
 *.zip
+.env
